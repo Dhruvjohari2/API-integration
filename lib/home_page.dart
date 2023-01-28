@@ -27,6 +27,7 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     getTeams();
     return Scaffold(
+      appBar: AppBar(title: const Text("Api integration")),
       body: FutureBuilder(
         future: getTeams(),
         builder: (context, snapshot) {
