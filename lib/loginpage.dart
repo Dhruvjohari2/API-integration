@@ -14,7 +14,7 @@ class _LoginPageState extends State<LoginPage> {
     debugPrint('userdata: $_email,$_phone,$_name,$_gender');
     try {
       final response =
-          await http.post(Uri.parse("http://localhost:3001/student"), body: {
+          await http.post(Uri.parse("http://192.168.0.106:3001/student"), body: {
         "name": _name,
         "gender": _gender,
         "email": _email,
@@ -189,6 +189,11 @@ class _LoginPageState extends State<LoginPage> {
               ),
             ),
           ),
+          Container(
+            padding: const EdgeInsets.all(10),
+            margin: const EdgeInsets.all(10),
+            child: const Text("Already a user? Sign IN"),
+          )
         ],
       ),
     );
