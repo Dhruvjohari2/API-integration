@@ -1,6 +1,6 @@
-import 'package:demo/home_page.dart';
-import 'package:demo/loginpage.dart';
-import 'package:demo/signinpage.dart';
+import 'package:demo/view/home_page.dart';
+import 'package:demo/view/loginpage.dart';
+import 'package:demo/view/signinpage.dart';
 import 'package:flutter/material.dart';
 
 void main() {
