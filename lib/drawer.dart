@@ -1,4 +1,5 @@
 import 'package:demo/view/loginpage.dart';
+import 'package:demo/view/profile.dart';
 import 'package:flutter/material.dart';
 
 class NavDrawer extends StatelessWidget {
@@ -26,7 +27,9 @@ class NavDrawer extends StatelessWidget {
           ListTile(
             leading: const Icon(Icons.verified_user),
             title: const Text('Profile'),
-            onTap: () => {Navigator.of(context).pop()},
+            onTap: () => {
+              Navigator.push(context,MaterialPageRoute(builder: (_) => const ProfilePage(),)),
+            },
           ),
           ListTile(
             leading: const Icon(Icons.settings),

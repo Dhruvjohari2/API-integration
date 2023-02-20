@@ -85,6 +85,17 @@ class _SignInPageState extends State<SignInPage> {
               },
             ),
           ),
+          Padding(
+            padding: const EdgeInsets.all(20),
+            child: SizedBox(
+              width: double.infinity,
+              child: ElevatedButton(
+                onPressed: () {
+                },
+                child: const Text("LOGIN"),
+              ),
+            ),
+          ),
         ],
       ),
     );
