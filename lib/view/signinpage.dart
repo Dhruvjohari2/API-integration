@@ -22,6 +22,13 @@ class _SignInPageState extends State<SignInPage> {
       body: Column(
         children: [
           Container(
+            margin: const EdgeInsets.symmetric(vertical: 15),
+            child: const Text(
+              'Enter Email Address',
+              style: TextStyle(fontSize: 15, color: Colors.black),
+            ),
+          ),
+          Container(
             margin: const EdgeInsets.all(20),
             padding: const EdgeInsets.symmetric(horizontal: 15),
             width: double.infinity,
@@ -90,8 +97,7 @@ class _SignInPageState extends State<SignInPage> {
             child: SizedBox(
               width: double.infinity,
               child: ElevatedButton(
-                onPressed: () {
-                },
+                onPressed: () {},
                 child: const Text("LOGIN"),
               ),
             ),

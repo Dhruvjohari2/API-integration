@@ -1,4 +1,6 @@
 import 'package:demo/view/home_page.dart';
+import 'package:demo/view/profile.dart';
+import 'package:demo/view/signinpage.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
@@ -13,8 +15,8 @@ class _LoginPageState extends State<LoginPage> {
   _onclick() async {
     debugPrint('userdata: $_email,$_phone,$_name,$_gender');
     try {
-      final response =
-          await http.post(Uri.parse("http://192.168.0.106:3001/student"), body: {
+      final response = await http
+          .post(Uri.parse("http://192.168.0.106:3001/student"), body: {
         "name": _name,
         "gender": _gender,
         "email": _email,
@@ -189,10 +191,12 @@ class _LoginPageState extends State<LoginPage> {
               ),
             ),
           ),
-          Container(
-            padding: const EdgeInsets.all(10),
-            margin: const EdgeInsets.all(10),
-            child: const Text("Already a user? Sign IN"),
+          GestureDetector(
+            onTap: () {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (_) => const SignInPage()));
+            },
+            child: const Text('SignIn ?'),
           )
         ],
       ),
