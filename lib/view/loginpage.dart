@@ -46,159 +46,190 @@ class _LoginPageState extends State<LoginPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: const Text("login Page")),
-      body: Column(
-        children: [
-          Container(
-            margin: const EdgeInsets.all(20),
-            padding: const EdgeInsets.symmetric(horizontal: 15),
-            width: double.infinity,
-            decoration: BoxDecoration(
-              border: Border.all(
-                width: 2,
-                color: Colors.grey,
+      body: SingleChildScrollView(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Container(
+              padding: const EdgeInsets.symmetric(horizontal: 15,vertical: 10),
+              child: const Text(
+                'Enter Name',
+                style: TextStyle(fontSize: 18, color: Colors.black87,fontWeight: FontWeight.w600),
               ),
-              borderRadius: BorderRadius.circular(5),
             ),
-            child: TextFormField(
-              keyboardType: TextInputType.name,
-              style: const TextStyle(
-                fontSize: 20,
-              ),
-              decoration: const InputDecoration(
-                border: InputBorder.none,
-                hintText: "Enter Name",
-              ),
-              onChanged: (text) => _name = text,
-              validator: (value) {
-                if (value == null || value.isEmpty) {
-                  return "Enter your name";
-                }
-                if (!value.contains(' ')) {
-                  return "Enter your Full Name";
-                }
-                return null;
-              },
-            ),
-          ),
-          Container(
-            margin: const EdgeInsets.all(20),
-            padding: const EdgeInsets.symmetric(horizontal: 15),
-            width: double.infinity,
-            decoration: BoxDecoration(
-              border: Border.all(
-                width: 2,
-                color: Colors.grey,
-              ),
-              borderRadius: BorderRadius.circular(5),
-            ),
-            child: TextFormField(
-              keyboardType: TextInputType.emailAddress,
-              style: const TextStyle(
-                fontSize: 20,
-              ),
-              decoration: const InputDecoration(
-                border: InputBorder.none,
-                hintText: "Enter Email Address",
-              ),
-              onChanged: (text) => _email = text,
-              validator: (value) {
-                if (value == null || value.isEmpty) {
-                  return "Enter your email";
-                }
-                if (!value.contains(' ')) {
-                  return "Enter your email";
-                }
-                if (!value.contains('@') || !value.contains('.com')) {
-                  return "enter email properly ";
-                }
-                return null;
-              },
-            ),
-          ),
-          Container(
-            margin: const EdgeInsets.all(20),
-            padding: const EdgeInsets.symmetric(horizontal: 15),
-            width: double.infinity,
-            decoration: BoxDecoration(
-              border: Border.all(
-                width: 2,
-                color: Colors.grey,
-              ),
-              borderRadius: BorderRadius.circular(5),
-            ),
-            child: TextFormField(
-              keyboardType: TextInputType.number,
-              style: const TextStyle(
-                fontSize: 20,
-              ),
-              decoration: const InputDecoration(
-                border: InputBorder.none,
-                hintText: "Enter Phone",
-              ),
-              onChanged: (text) => _phone = text,
-              validator: (value) {
-                if (value == null || value.isEmpty) {
-                  return "Enter your number";
-                }
-                if (value.length != 10) {
-                  return "Enter your number properly";
-                }
-                return null;
-              },
-            ),
-          ),
-          Container(
-            margin: const EdgeInsets.all(20),
-            padding: const EdgeInsets.symmetric(horizontal: 15),
-            width: double.infinity,
-            decoration: BoxDecoration(
-              border: Border.all(
-                width: 2,
-                color: Colors.grey,
-              ),
-              borderRadius: BorderRadius.circular(5),
-            ),
-            child: TextFormField(
-              keyboardType: TextInputType.name,
-              style: const TextStyle(
-                fontSize: 20,
-              ),
-              decoration: const InputDecoration(
-                border: InputBorder.none,
-                hintText: "Enter Gender",
-              ),
-              onChanged: (text) => _gender = text,
-              validator: (value) {
-                if (value == null || value.isEmpty) {
-                  return "Enter your name";
-                }
-                if (!value.contains(' ')) {
-                  return "Enter your Full Name";
-                }
-                return null;
-              },
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.all(20),
-            child: SizedBox(
+            Container(
+              margin: const EdgeInsets.symmetric(horizontal: 15),
+              padding: const EdgeInsets.symmetric(horizontal: 15),
               width: double.infinity,
-              child: ElevatedButton(
-                onPressed: () {
-                  _onclick();
+              decoration: BoxDecoration(
+                border: Border.all(
+                  width: 2,
+                  color: Colors.grey,
+                ),
+                borderRadius: BorderRadius.circular(5),
+              ),
+              child: TextFormField(
+                keyboardType: TextInputType.name,
+                style: const TextStyle(
+                  fontSize: 20,
+                ),
+                decoration: const InputDecoration(
+                  border: InputBorder.none,
+                  hintText: "Enter Name",
+                ),
+                onChanged: (text) => _name = text,
+                validator: (value) {
+                  if (value == null || value.isEmpty) {
+                    return "Enter your name";
+                  }
+                  if (!value.contains(' ')) {
+                    return "Enter your Full Name";
+                  }
+                  return null;
                 },
-                child: const Text("SAVE DATA"),
               ),
             ),
-          ),
-          GestureDetector(
-            onTap: () {
-              Navigator.push(context,
-                  MaterialPageRoute(builder: (_) => const SignInPage()));
-            },
-            child: const Text('SignIn ?'),
-          )
-        ],
+            Container(
+              padding: const EdgeInsets.symmetric(horizontal: 15,vertical: 10),
+              child: const Text(
+                'Enter Email Address',
+                style: TextStyle(fontSize: 18, color: Colors.black87,fontWeight: FontWeight.w600),
+              ),
+            ),
+            Container(
+              margin: const EdgeInsets.symmetric(horizontal: 15),
+              padding: const EdgeInsets.symmetric(horizontal: 15),
+              width: double.infinity,
+              decoration: BoxDecoration(
+                border: Border.all(
+                  width: 2,
+                  color: Colors.grey,
+                ),
+                borderRadius: BorderRadius.circular(5),
+              ),
+              child: TextFormField(
+                keyboardType: TextInputType.emailAddress,
+                style: const TextStyle(
+                  fontSize: 20,
+                ),
+                decoration: const InputDecoration(
+                  border: InputBorder.none,
+                  hintText: "Enter Email Address",
+                ),
+                onChanged: (text) => _email = text,
+                validator: (value) {
+                  if (value == null || value.isEmpty) {
+                    return "Enter your email";
+                  }
+                  if (!value.contains(' ')) {
+                    return "Enter your email";
+                  }
+                  if (!value.contains('@') || !value.contains('.com')) {
+                    return "enter email properly ";
+                  }
+                  return null;
+                },
+              ),
+            ),
+            Container(
+              padding: const EdgeInsets.symmetric(horizontal: 15,vertical: 10),
+              child: const Text(
+                'Enter Phone',
+                style: TextStyle(fontSize: 18, color: Colors.black87,fontWeight: FontWeight.w600),
+              ),
+            ),
+            Container(
+              margin: const EdgeInsets.symmetric(horizontal: 15),
+              padding: const EdgeInsets.symmetric(horizontal: 15),
+              width: double.infinity,
+              decoration: BoxDecoration(
+                border: Border.all(
+                  width: 2,
+                  color: Colors.grey,
+                ),
+                borderRadius: BorderRadius.circular(5),
+              ),
+              child: TextFormField(
+                keyboardType: TextInputType.number,
+                style: const TextStyle(
+                  fontSize: 20,
+                ),
+                decoration: const InputDecoration(
+                  border: InputBorder.none,
+                  hintText: "Enter Phone",
+                ),
+                onChanged: (text) => _phone = text,
+                validator: (value) {
+                  if (value == null || value.isEmpty) {
+                    return "Enter your number";
+                  }
+                  if (value.length != 10) {
+                    return "Enter your number properly";
+                  }
+                  return null;
+                },
+              ),
+            ),
+            Container(
+              padding: const EdgeInsets.symmetric(horizontal: 20,vertical: 10),
+              child: const Text(
+                'Enter Gender',
+                style: TextStyle(fontSize: 18, color: Colors.black87,fontWeight: FontWeight.w600),
+              ),
+            ),
+            Container(
+              margin: const EdgeInsets.all(20),
+              padding: const EdgeInsets.symmetric(horizontal: 15),
+              width: double.infinity,
+              decoration: BoxDecoration(
+                border: Border.all(
+                  width: 2,
+                  color: Colors.grey,
+                ),
+                borderRadius: BorderRadius.circular(5),
+              ),
+              child: TextFormField(
+                keyboardType: TextInputType.name,
+                style: const TextStyle(
+                  fontSize: 20,
+                ),
+                decoration: const InputDecoration(
+                  border: InputBorder.none,
+                  hintText: "Enter Gender",
+                ),
+                onChanged: (text) => _gender = text,
+                validator: (value) {
+                  if (value == null || value.isEmpty) {
+                    return "Enter your name";
+                  }
+                  if (!value.contains(' ')) {
+                    return "Enter your Full Name";
+                  }
+                  return null;
+                },
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(20),
+              child: SizedBox(
+                width: double.infinity,
+                child: ElevatedButton(
+                  onPressed: () {
+                    _onclick();
+                  },
+                  child: const Text("SAVE DATA"),
+                ),
+              ),
+            ),
+            GestureDetector(
+              onTap: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (_) => const SignInPage()));
+              },
+              child: const Text('SignIn ?'),
+            )
+          ],
+        ),
       ),
     );
   }
